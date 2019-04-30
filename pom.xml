@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>akka-java</groupId>
     <artifactId>akka-cluster-openshift</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <java.version>8</java.version>
         <scala.version>2.12</scala.version>
-        <akka.version>2.5.20</akka.version>
+        <akka.version>2.5.22</akka.version>
         <akka.http.version>10.1.7</akka.http.version>
-        <akka.cluster.bootstrap.version>0.20.0</akka.cluster.bootstrap.version>
+        <akka.cluster.bootstrap.version>1.0.0</akka.cluster.bootstrap.version>
         <docker.image.version>1.0.2</docker.image.version>
         <jackson.version>2.9.8</jackson.version>
         <junit.version>4.12</junit.version>
@@ -22,7 +18,6 @@
         <junit.jupiter.version>5.0.2</junit.jupiter.version>
         <junit.platform.version>1.0.0</junit.platform.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
@@ -70,7 +65,6 @@
             <artifactId>akka-http-spray-json_${scala.version}</artifactId>
             <version>${akka.http.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-stream_${scala.version}</artifactId>
@@ -91,7 +85,6 @@
             <artifactId>akka-management-cluster-http_${scala.version}</artifactId>
             <version>${akka.cluster.bootstrap.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -102,7 +95,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -127,9 +119,7 @@
             <version>${junit.vintage.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -141,7 +131,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19</version>
@@ -153,7 +142,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
             <!-- See When using JarJar, OneJar, Assembly or any jar-bundler -->
             <!-- https://doc.akka.io/docs/akka/current/general/configuration.html#when-using-jarjar-onejar-assembly-or-any-jar-bundler -->
             <!-- mvn clean package docker:build -->
@@ -176,12 +164,10 @@
                                 </includes>
                             </artifactSet>
                             <transformers>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                                     <resource>reference.conf</resource>
                                 </transformer>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
                                         <Main-Class>cluster.sharding.Runner</Main-Class>
                                     </manifestEntries>
@@ -191,7 +177,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
@@ -232,8 +217,6 @@
                     </images>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
