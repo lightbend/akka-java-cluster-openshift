@@ -1,10 +1,19 @@
 # akka-java-cluster-openshift
 
-An Akka Java cluster OpenShift demo application
+This is based on Hugh's Akka Cluster demo app with the nice visualizer. We've only removed a few config
+options so they go back to defaults, and updated Akka Mangement to 1.0, and then specify the app with an
+AkkaCluster resource instead of Namespace + Role + Rolebinding against default account + Deployment.
 
-This is an amazing way to visualize Akka Cluster behavior, and demonstrate core reactive systems principles!
+The AkkaCluster resource can be installed in any namespace.
 
-## build
+## install the AkkaCluster operator
+
+To install the operator, clone this repo and follow README. It is pre-built so you're just loading
+Kubernetes resources in this step and using the bintray image.
+
+https://github.com/lightbend/akka-cluster-operator
+
+## build the app docker image (optional)
 
 ```sh
 mvn clean package docker:build
@@ -17,7 +26,7 @@ image published to bintray.
 
 ```bash
 git checkout bintray
-kubectl apply -f kubernetes
+kubectl apply -f ./kubernetes
 ```
 
 make a Route to deployment/akka-cluster-demo port 8080 for the UI
@@ -36,7 +45,7 @@ docker images
 Deploy the app:
 
 ```bash
-kubectl apply -f kubernetes/akka-cluster.yml
+kubectl apply -f ./kubernetes
 ```
 
 Expose the built in UI:
