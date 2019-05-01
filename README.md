@@ -10,9 +10,17 @@ This is an amazing way to visualize Akka Cluster behavior, and demonstrate core 
 mvn clean package docker:build
 ```
 
+If this doesn't work, you can `git checkout -b bintray` and go straight to the deploy step, using a pre-built
+image published to bintray.
+
 ## openshift
 
-tbd
+```bash
+git checkout -b bintray
+kubectl apply -f kubernetes
+```
+
+make a Route to deployment/akka-cluster-demo port 8080 for the UI
 
 ## minikube
 
