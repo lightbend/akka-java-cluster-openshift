@@ -10,13 +10,13 @@ This is an amazing way to visualize Akka Cluster behavior, and demonstrate core 
 mvn clean package docker:build
 ```
 
-If this doesn't work, you can `git checkout -b bintray` and go straight to the deploy step, using a pre-built
+If this doesn't work, you can `git checkout bintray` and go straight to the deploy step, using a pre-built
 image published to bintray.
 
 ## openshift
 
 ```bash
-git checkout -b bintray
+git checkout bintray
 kubectl apply -f kubernetes
 ```
 
