@@ -1,6 +1,7 @@
 # akka-java-cluster-openshift
 
-This is based on Hugh's Akka Cluster demo app with the nice visualizer. We've only removed a few config
+This is based on [Hugh's Akka Cluster](https://github.com/mckeeh3/akka-java-cluster-openshift) demo app with the nice visualizer.
+We've only removed a few config
 options so they go back to defaults, and updated Akka Mangement to 1.0, and then specify the app with an
 AkkaCluster resource instead of Namespace + Role + Rolebinding against default account + Deployment.
 
