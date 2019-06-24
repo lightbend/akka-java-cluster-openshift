@@ -8,11 +8,21 @@ spec:
     spec:
       containers:
       - name: main
-        image: akka-cluster-demo:1.0.2
-        imagePullPolicy: Never
+        image: lightbend-docker-registry.bintray.io/lightbend/akka-cluster-demo:1.0.2
+        readinessProbe:
+          httpGet:
+            path: "/ready"
+            port: management
+          periodSeconds: 10
+          failureThreshold: 10
+          initialDelaySeconds: 20
         livenessProbe:
-          tcpSocket:
-            port: 8558
+          httpGet:
+            path: "/alive"
+            port: management
+          periodSeconds: 10
+          failureThreshold: 10
+          initialDelaySeconds: 20
         ports:
         - name: http
           containerPort: 8080

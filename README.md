@@ -27,7 +27,7 @@ image published to bintray.
 
 ```bash
 git checkout bintray
-kubectl apply -f ./kubernetes
+kubectl apply -f ./kubernetes/akka-cluster.yml
 ```
 
 make a Route to deployment/akka-cluster-demo port 8080 for the UI
@@ -46,7 +46,7 @@ docker images
 Deploy the app:
 
 ```bash
-kubectl apply -f ./kubernetes
+kubectl apply -f ./kubernetes/akka-cluster-minishift.yml
 ```
 
 Expose the built in UI:
