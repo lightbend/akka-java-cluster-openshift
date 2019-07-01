@@ -9,20 +9,9 @@ spec:
       containers:
       - name: main
         image: lightbend-docker-registry.bintray.io/lightbend/akka-cluster-demo:1.0.2
-        readinessProbe:
-          httpGet:
-            path: "/ready"
-            port: management
-          periodSeconds: 10
-          failureThreshold: 10
-          initialDelaySeconds: 20
         livenessProbe:
-          httpGet:
-            path: "/alive"
-            port: management
-          periodSeconds: 10
-          failureThreshold: 10
-          initialDelaySeconds: 20
+          tcpSocket:
+            port: 8558
         ports:
         - name: http
           containerPort: 8080
