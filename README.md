@@ -34,6 +34,7 @@ The public image is available but you can build your own image wtih:
 ```sh
 mvn clean package docker:build
 ```
+Manually publish updates to Bintray.
 
 ## Openshift
 

@@ -1,0 +1,6 @@
+[AdoptOpenJDK]
+name=AdoptOpenJDK
+baseurl=https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/rhel/8/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
