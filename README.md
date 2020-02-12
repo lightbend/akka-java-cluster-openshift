@@ -5,7 +5,7 @@ We've only removed a few config
 options so they go back to defaults, and updated Akka Mangement to 1.0, and then specify the app with an
 AkkaCluster resource instead of Namespace + Role + Rolebinding against default account + Deployment.
 
-The AkkaCluster resource can be installed in any namespace.
+The AkkaCluster resource can be installed in any namespace. This application uses the Red Hat Universal Base Image([UBI](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image])), and the [AdoptOpenJDK](https://adoptopenjdk.net/.).
 
 ## Enable Akka Management
 
@@ -22,7 +22,9 @@ akka.management {
 ```
 ## Install the AkkaCluster operator
 
-To install the operator, use [OperatorHub.io](https://operatorhub.io) or clone the Operator repo and follow its README. It is pre-built so you're just loading
+To install the operator, use the [Akka Cluster Operator](https://operatorhub.io/operator/akka-cluster-operator) from [OperatorHub.io](https://operatorhub.io).
+
+You can also clone the Operator repo and follow its README. It is pre-built so you're just loading
 Kubernetes resources in this step and using the bintray image.
 
 https://github.com/lightbend/akka-cluster-operator
