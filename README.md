@@ -46,7 +46,7 @@ make a Route to deployment/akka-cluster-demo port 8080 for the UI
 
 ## Minikube
 
-Install the AkkaCluster Operator.
+Install the AkkaCluster Operator from [OperatorHub.io](https://operatorhub.io/operator/akka-cluster-operator) before deploying the demo application.
 
 ```bash
 kubectl apply -f ./kubernetes/akka-cluster-minishift.yml

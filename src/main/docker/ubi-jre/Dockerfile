@@ -4,9 +4,9 @@ LABEL maintainer="Lightbend, Inc"
 # Update image
 RUN yum update --disableplugin=subscription-manager -y && rm -rf /var/cache/yum
 
-# Install OpenJDK 
+# Install OpenJDK
 COPY adoptopenjdk.repo /etc/yum.repos.d/adoptopenjdk.repo
-RUN yum update --disableplugin=subscription-manager -y && rm -rf /var/cache/yum 
+RUN yum update --disableplugin=subscription-manager -y && rm -rf /var/cache/yum
 RUN yum install -y adoptopenjdk-8-hotspot-jre
 
 # Add Lightbend User
