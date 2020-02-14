@@ -32,3 +32,4 @@ ENTRYPOINT ["/bin/sh","-c","java -jar /maven/akka-cluster-openshift.jar"]
 
 # See also: https://docs.openshift.com/container-platform/3.11/creating_images/guidelines.html
 USER 1001
+
